@@ -20,6 +20,29 @@ router.post(
   }
 );
 
+// GET /api/admin/classes
+router.get(
+  '/',
+  async (req: Request, res: Response): Promise<void> => {
+    await db.read();
+    res.json(db.data!.classes);
+  }
+);
+
+// GET /api/admin/classes/:id
+router.get(
+  '/:id',
+  async (req: Request, res: Response): Promise<void> => {
+    await db.read();
+    const found = db.data!.classes.find((c: Class) => c.id === req.params.id);
+    if (!found) {
+      res.status(404).json({ error: 'Class not found' });
+      return;
+    }
+    res.json(found);
+  }
+);
+
 // PUT /api/admin/classes/:id
 router.put(
   '/:id',

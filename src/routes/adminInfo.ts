@@ -13,6 +13,12 @@ router.put('/sport', requireAdminPassword, async (req, res) => {
   res.status(200).json(newInfo);
 });
 
+// GET /api/admin/info/sport
+router.get('/sport', async (req, res) => {
+  await db.read();
+  res.json(db.data!.sportInfo);
+});
+
 // PUT /api/admin/info/teacher
 router.put('/teacher', requireAdminPassword, async (req, res) => {
   const newInfo = req.body;
@@ -22,5 +28,10 @@ router.put('/teacher', requireAdminPassword, async (req, res) => {
   res.status(200).json(newInfo);
 });
 
-export default router;
+// GET /api/admin/info/teacher
+router.get('/teacher', async (req, res) => {
+  await db.read();
+  res.json(db.data!.teacherInfo);
+});
 
+export default router;

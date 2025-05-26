@@ -19,6 +19,29 @@ router.post(
   }
 );
 
+// GET /api/admin/gallery
+router.get(
+  '/',
+  async (req: Request, res: Response): Promise<void> => {
+    await db.read();
+    res.json(db.data!.gallery);
+  }
+);
+
+// GET /api/admin/gallery/:url
+router.get(
+  '/:url',
+  async (req: Request, res: Response): Promise<void> => {
+    await db.read();
+    const found = db.data!.gallery.find((img: GalleryImage) => img.url === req.params.url);
+    if (!found) {
+      res.status(404).json({ error: 'Image not found' });
+      return;
+    }
+    res.json(found);
+  }
+);
+
 // DELETE /api/admin/gallery/:url
 router.delete(
   '/:url',
@@ -37,4 +60,3 @@ router.delete(
 );
 
 export default router;
-
