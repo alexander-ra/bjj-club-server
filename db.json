@@ -1,1 +1,15 @@
-{}
+{
+  "sportInfo": {
+    "id": "sport-1",
+    "title": {
+      "en": "Sport Info",
+      "es": "Información Deportiva",
+      "bg": "Спортна информация"
+    },
+    "content": {
+      "en": "Details about the sport.",
+      "es": "Detalles sobre el deporte.",
+      "bg": "Подробности за спорта."
+    }
+  }
+}

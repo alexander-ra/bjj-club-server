@@ -20,9 +20,20 @@ const adapter = new JSONFile<DatabaseSchema>('db.json');
 const db = new Low<DatabaseSchema>(adapter, {} as any);
 
 export async function initDB() {
-  await db.read();
-  db.data ||= { classes: [], gallery: [], info: [], schedule: [], sportInfo: {} as Info, teacherInfo: {} as Info };
-  await db.write();
+  console.log('[DB] Initializing database...');
+  try {
+    console.log('[DB] Reading database file...');
+    await db.read();
+    console.log('[DB] Database file read successfully.');
+    db.data ||= { classes: [], gallery: [], info: [], schedule: [], sportInfo: {} as Info, teacherInfo: {} as Info };
+    console.log('[DB] Writing initial data to database file...');
+    await db.write();
+    console.log('[DB] Initial data written successfully.');
+    console.log('[DB] Database initialized.');
+  } catch (error) {
+    console.error('[DB] Error initializing database:', error);
+    throw error; // Re-throw to be caught by server startup
+  }
 }
 
 export default db;
