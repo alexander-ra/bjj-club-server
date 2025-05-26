@@ -1,0 +1,102 @@
+{
+  "classes": [
+    {
+      "id": "dbca59f0-e568-4b25-ab6b-bfc6dcf1f303",
+      "title": "Beginner",
+      "icon": "\ud83e\udd4b",
+      "images": [
+        "https://picsum.photos/seed/beginner0/800/600",
+        "https://picsum.photos/seed/beginner1/800/600"
+      ],
+      "description": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training."
+    },
+    {
+      "id": "f008a1f8-2e99-4cb6-91d1-f6eb7fdc99fe",
+      "title": "Professional",
+      "icon": "\ud83c\udfc6",
+      "images": [
+        "https://picsum.photos/seed/professional0/800/600",
+        "https://picsum.photos/seed/professional1/800/600"
+      ],
+      "description": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training."
+    },
+    {
+      "id": "2d8861b3-368e-460a-b9d4-6156d13c3911",
+      "title": "Senior",
+      "icon": "\ud83e\uddd3",
+      "images": [
+        "https://picsum.photos/seed/senior0/800/600",
+        "https://picsum.photos/seed/senior1/800/600"
+      ],
+      "description": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training."
+    },
+    {
+      "id": "d0a9889c-6aa3-48b9-bdc2-0c6df03c869d",
+      "title": "Open Mat",
+      "icon": "\ud83e\udd3c",
+      "images": [
+        "https://picsum.photos/seed/openmat0/800/600",
+        "https://picsum.photos/seed/openmat1/800/600"
+      ],
+      "description": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training."
+    }
+  ],
+  "schedule": [
+    {
+      "id": "6d57479f-030e-49ff-a4ee-6d5e6d3a1acf",
+      "classId": "dbca59f0-e568-4b25-ab6b-bfc6dcf1f303",
+      "dayOfWeek": 1,
+      "startTime": "17:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "aa792fd9-6892-4f7a-aaa1-178c481abb68",
+      "classId": "f008a1f8-2e99-4cb6-91d1-f6eb7fdc99fe",
+      "dayOfWeek": 2,
+      "startTime": "18:00",
+      "durationMinutes": 75
+    },
+    {
+      "id": "9633d969-7513-47f0-a75c-07fea1945917",
+      "classId": "2d8861b3-368e-460a-b9d4-6156d13c3911",
+      "dayOfWeek": 3,
+      "startTime": "19:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "3f658edd-3f69-4f97-a35c-5847d313080c",
+      "classId": "d0a9889c-6aa3-48b9-bdc2-0c6df03c869d",
+      "dayOfWeek": 4,
+      "startTime": "20:00",
+      "durationMinutes": 105
+    }
+  ],
+  "sportInfo": {
+    "text": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training. Our club welcomes all levels of experience. Whether you're a complete beginner or a seasoned competitor, we offer structured classes tailored to your journey. Join us and experience the confidence, fitness, and camaraderie that BJJ brings into your life.",
+    "images": [
+      "https://picsum.photos/seed/sport0/800/600",
+      "https://picsum.photos/seed/sport1/800/600"
+    ]
+  },
+  "teacherInfo": {
+    "text": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training. Our club welcomes all levels of experience. Whether you're a complete beginner or a seasoned competitor, we offer structured classes tailored to your journey. Join us and experience the confidence, fitness, and camaraderie that BJJ brings into your life.",
+    "images": [
+      "https://picsum.photos/seed/teacher0/800/600",
+      "https://picsum.photos/seed/teacher1/800/600"
+    ]
+  },
+  "gallery": [
+    {
+      "url": "https://picsum.photos/seed/gallery0/800/600",
+      "caption": "Gallery Image 1"
+    },
+    {
+      "url": "https://picsum.photos/seed/gallery1/800/600",
+      "caption": "Gallery Image 2"
+    },
+    {
+      "url": "https://picsum.photos/seed/gallery2/800/600",
+      "caption": "Gallery Image 3"
+    }
+  ]
+}
