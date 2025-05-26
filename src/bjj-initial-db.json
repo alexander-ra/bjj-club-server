@@ -3,7 +3,7 @@
     {
       "id": "dbca59f0-e568-4b25-ab6b-bfc6dcf1f303",
       "title": "Beginner",
-      "icon": "\ud83e\udd4b",
+      "icon": "FaUserGraduate",
       "images": [
         "https://picsum.photos/seed/beginner0/800/600",
         "https://picsum.photos/seed/beginner1/800/600"
@@ -13,7 +13,7 @@
     {
       "id": "f008a1f8-2e99-4cb6-91d1-f6eb7fdc99fe",
       "title": "Professional",
-      "icon": "\ud83c\udfc6",
+      "icon": "FaMedal",
       "images": [
         "https://picsum.photos/seed/professional0/800/600",
         "https://picsum.photos/seed/professional1/800/600"
@@ -23,7 +23,7 @@
     {
       "id": "2d8861b3-368e-460a-b9d4-6156d13c3911",
       "title": "Senior",
-      "icon": "\ud83e\uddd3",
+      "icon": "FaPersonCane",
       "images": [
         "https://picsum.photos/seed/senior0/800/600",
         "https://picsum.photos/seed/senior1/800/600"
@@ -33,7 +33,7 @@
     {
       "id": "d0a9889c-6aa3-48b9-bdc2-0c6df03c869d",
       "title": "Open Mat",
-      "icon": "\ud83e\udd3c",
+      "icon": "FaPersonRunning",
       "images": [
         "https://picsum.photos/seed/openmat0/800/600",
         "https://picsum.photos/seed/openmat1/800/600"
