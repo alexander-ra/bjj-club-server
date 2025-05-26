@@ -1,11 +1,8 @@
 export interface Class {
   id: string;
+  title: string;
   icon: string;
   images: string[];
-  descriptions: {
-    en: string;
-    es: string;
-    bg: string;
-  };
+  description: string;
 }
 

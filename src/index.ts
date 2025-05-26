@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import classesRoutes from './routes/classes';
-import scheduleRoutes from './routes/schedule';
-import infoRoutes from './routes/info';
-import galleryRoutes from './routes/gallery';
+import adminClassesRoutes from './routes/adminClasses';
+import adminScheduleRoutes from './routes/adminSchedule';
+import adminInfoRoutes from './routes/adminInfo';
+import adminGalleryRoutes from './routes/adminGallery';
 import { initDB } from './db';
 
 const app = express();
@@ -18,10 +18,10 @@ app.get('/ping', (req, res) => {
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/api/classes', classesRoutes);
-app.use('/api/schedule', scheduleRoutes);
-app.use('/api/info', infoRoutes);
-app.use('/api/gallery', galleryRoutes);
+app.use('/api/admin/classes', adminClassesRoutes);
+app.use('/api/admin/schedule', adminScheduleRoutes);
+app.use('/api/admin/info', adminInfoRoutes);
+app.use('/api/admin/gallery', adminGalleryRoutes);
 
 (async () => {
   try {

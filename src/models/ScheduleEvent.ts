@@ -1,13 +1,8 @@
 export interface ScheduleEvent {
   id: string;
   classId: string;
-  start: string; // ISO date string
-  end: string;   // ISO date string
-  location: string;
-  description: {
-    en: string;
-    es: string;
-    bg: string;
-  };
+  dayOfWeek: number; // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+  startTime: string; // HH:mm
+  durationMinutes: number;
 }
 
