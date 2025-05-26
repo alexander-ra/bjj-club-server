@@ -1,0 +1,294 @@
+openapi: 3.0.3
+info:
+  title: BJJ Club Website API
+  version: 1.1.0
+  description: REST API for the public site and admin panel of the BJJ Club platform. Simplified schedule and class models.
+
+servers:
+  - url: http://localhost:3001
+
+components:
+  securitySchemes:
+    AdminPassword:
+      type: apiKey
+      in: header
+      name: X-Admin-Password
+
+  schemas:
+    Class:
+      type: object
+      required: [title, description, icon]
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        icon:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        description:
+          type: string
+
+    ScheduleEvent:
+      type: object
+      required: [classId, dayOfWeek, startTime, durationMinutes]
+      properties:
+        id:
+          type: string
+        classId:
+          type: string
+        dayOfWeek:
+          type: integer
+          minimum: 0
+          maximum: 6
+          description: 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+        startTime:
+          type: string
+          pattern: "^([01]\\d|2[0-3]):([0-5]\\d)$"
+          example: "18:30"
+        durationMinutes:
+          type: integer
+          example: 60
+
+    InfoBlock:
+      type: object
+      properties:
+        text:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+
+    GalleryImage:
+      type: object
+      properties:
+        url:
+          type: string
+        caption:
+          type: string
+
+security:
+  - {}
+
+paths:
+  /api/classes:
+    get:
+      summary: Get all classes
+      responses:
+        200:
+          description: List of all classes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Class'
+
+  /api/classes/{id}:
+    get:
+      summary: Get class by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Class detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Class'
+
+  /api/schedule:
+    get:
+      summary: Get all scheduled class times (recurring weekly)
+      responses:
+        200:
+          description: Weekly schedule entries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ScheduleEvent'
+
+  /api/info/sport:
+    get:
+      summary: Get sport info
+      responses:
+        200:
+          description: Text and images about BJJ
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InfoBlock'
+
+  /api/info/teacher:
+    get:
+      summary: Get teacher info
+      responses:
+        200:
+          description: Text and images about the teacher
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InfoBlock'
+
+  /api/gallery:
+    get:
+      summary: Get gallery images
+      responses:
+        200:
+          description: List of gallery images
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GalleryImage'
+
+  /api/admin/classes:
+    post:
+      summary: Add a new class
+      security:
+        - AdminPassword: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Class'
+      responses:
+        201:
+          description: Class created
+
+  /api/admin/classes/{id}:
+    put:
+      summary: Update existing class
+      security:
+        - AdminPassword: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Class'
+      responses:
+        200:
+          description: Class updated
+
+    delete:
+      summary: Delete a class
+      security:
+        - AdminPassword: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Deleted
+
+  /api/admin/schedule:
+    post:
+      summary: Add a new weekly schedule entry
+      security:
+        - AdminPassword: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduleEvent'
+      responses:
+        201:
+          description: Schedule entry created
+
+  /api/admin/schedule/{id}:
+    delete:
+      summary: Delete a schedule entry
+      security:
+        - AdminPassword: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Schedule entry deleted
+
+  /api/admin/info/sport:
+    put:
+      summary: Update sport info
+      security:
+        - AdminPassword: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InfoBlock'
+      responses:
+        200:
+          description: Updated
+
+  /api/admin/info/teacher:
+    put:
+      summary: Update teacher info
+      security:
+        - AdminPassword: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InfoBlock'
+      responses:
+        200:
+          description: Updated
+
+  /api/admin/gallery:
+    post:
+      summary: Add gallery image
+      security:
+        - AdminPassword: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GalleryImage'
+      responses:
+        201:
+          description: Image added
+
+  /api/admin/gallery/{url}:
+    delete:
+      summary: Delete gallery image
+      security:
+        - AdminPassword: []
+      parameters:
+        - name: url
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Deleted

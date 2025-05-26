@@ -25,7 +25,14 @@ export async function initDB() {
     console.log('[DB] Reading database file...');
     await db.read();
     console.log('[DB] Database file read successfully.');
-    db.data ||= { classes: [], gallery: [], info: [], schedule: [], sportInfo: {} as Info, teacherInfo: {} as Info };
+    // Ensure all properties exist, even if db.json is missing or incomplete
+    db.data ||= {} as DatabaseSchema;
+    db.data.classes ||= [];
+    db.data.gallery ||= [];
+    db.data.info ||= [];
+    db.data.schedule ||= [];
+    db.data.sportInfo ||= {} as Info;
+    db.data.teacherInfo ||= {} as Info;
     console.log('[DB] Writing initial data to database file...');
     await db.write();
     console.log('[DB] Initial data written successfully.');

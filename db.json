@@ -1,8 +1,8 @@
 {
   "sportInfo": {
-    "id": "sport-1",
+    "id": "sport-2",
     "title": {
-      "en": "Sport Info",
+      "en": "Sport Info 2",
       "es": "Información Deportiva",
       "bg": "Спортна информация"
     },
@@ -11,5 +11,10 @@
       "es": "Detalles sobre el deporte.",
       "bg": "Подробности за спорта."
     }
-  }
+  },
+  "classes": [],
+  "gallery": [],
+  "info": [],
+  "schedule": [],
+  "teacherInfo": {}
 }
