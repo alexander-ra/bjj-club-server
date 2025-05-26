@@ -18,10 +18,10 @@ app.get('/ping', (req, res) => {
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/api/admin/classes', adminClassesRoutes);
-app.use('/api/admin/schedule', adminScheduleRoutes);
-app.use('/api/admin/info', adminInfoRoutes);
-app.use('/api/admin/gallery', adminGalleryRoutes);
+app.use('/api/classes', adminClassesRoutes);
+app.use('/api/schedule', adminScheduleRoutes);
+app.use('/api/info', adminInfoRoutes);
+app.use('/api/gallery', adminGalleryRoutes);
 
 (async () => {
   try {
