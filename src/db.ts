@@ -12,6 +12,8 @@ export interface DatabaseSchema {
   gallery: GalleryImage[];
   info: Info[];
   schedule: ScheduleEvent[];
+  sportInfo: Info;
+  teacherInfo: Info;
 }
 
 const adapter = new JSONFile<DatabaseSchema>('db.json');
@@ -19,9 +21,8 @@ const db = new Low<DatabaseSchema>(adapter, {} as any);
 
 export async function initDB() {
   await db.read();
-  db.data ||= { classes: [], gallery: [], info: [], schedule: [] };
+  db.data ||= { classes: [], gallery: [], info: [], schedule: [], sportInfo: {} as Info, teacherInfo: {} as Info };
   await db.write();
 }
 
 export default db;
-
