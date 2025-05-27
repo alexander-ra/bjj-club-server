@@ -4,10 +4,11 @@ import db from '../db';
 import { requireAdminPassword } from './requireAdminPassword';
 import { GalleryImage } from '../models/GalleryImage';
 
-const router = express.Router();
+const adminRouter = express.Router();
+const publicRouter = express.Router();
 
 // POST /api/admin/gallery
-router.post(
+adminRouter.post(
   '/',
   requireAdminPassword,
   async (req: Request, res: Response): Promise<void> => {
@@ -19,8 +20,8 @@ router.post(
   }
 );
 
-// GET /api/admin/gallery
-router.get(
+// GET /api/gallery
+publicRouter.get(
   '/',
   async (req: Request, res: Response): Promise<void> => {
     await db.read();
@@ -28,8 +29,8 @@ router.get(
   }
 );
 
-// GET /api/admin/gallery/:url
-router.get(
+// GET /api/gallery/:url
+publicRouter.get(
   '/:url',
   async (req: Request, res: Response): Promise<void> => {
     await db.read();
@@ -42,8 +43,37 @@ router.get(
   }
 );
 
+// PUT /api/admin/gallery/:url
+adminRouter.put(
+  '/:url',
+  requireAdminPassword,
+  async (req: Request, res: Response): Promise<void> => {
+    console.log(`PUT /api/admin/gallery/${req.params.url} called`); // Added log
+    const imageUrl = req.params.url;
+    const updatedImageData: Partial<GalleryImage> = req.body;
+
+    await db.read();
+    const imageIndex = db.data!.gallery.findIndex((img: GalleryImage) => img.url === imageUrl);
+
+    if (imageIndex === -1) {
+      res.status(404).json({ error: 'Image not found' });
+      return;
+    }
+
+    // Update the existing image with new data, ensuring URL remains unchanged
+    db.data!.gallery[imageIndex] = {
+      ...db.data!.gallery[imageIndex],
+      ...updatedImageData,
+      url: imageUrl, // Ensure URL remains unchanged
+    };
+
+    await db.write();
+    res.status(200).json(db.data!.gallery[imageIndex]);
+  }
+);
+
 // DELETE /api/admin/gallery/:url
-router.delete(
+adminRouter.delete(
   '/:url',
   requireAdminPassword,
   async (req: Request, res: Response): Promise<void> => {
@@ -59,4 +89,4 @@ router.delete(
   }
 );
 
-export default router;
+export { adminRouter, publicRouter };

@@ -4,10 +4,11 @@ import { Class } from '../models/Class';
 import { requireAdminPassword } from './requireAdminPassword';
 import { Request, Response } from 'express';
 
-const router = express.Router();
+const adminRouter = express.Router();
+const publicRouter = express.Router();
 
 // POST /api/admin/classes
-router.post(
+adminRouter.post(
   '/',
   requireAdminPassword,
   async (req: Request, res: Response): Promise<void> => {
@@ -20,8 +21,8 @@ router.post(
   }
 );
 
-// GET /api/admin/classes
-router.get(
+// GET /api/classes
+publicRouter.get(
   '/',
   async (req: Request, res: Response): Promise<void> => {
     await db.read();
@@ -29,8 +30,8 @@ router.get(
   }
 );
 
-// GET /api/admin/classes/:id
-router.get(
+// GET /api/classes/:id
+publicRouter.get(
   '/:id',
   async (req: Request, res: Response): Promise<void> => {
     await db.read();
@@ -44,24 +45,36 @@ router.get(
 );
 
 // PUT /api/admin/classes/:id
-router.put(
+adminRouter.put(
   '/:id',
   requireAdminPassword,
   async (req: Request, res: Response): Promise<void> => {
+    console.log(`PUT /api/admin/classes/${req.params.id} called`); // Added log
+    const classId = req.params.id;
+    const updatedClassData: Partial<Class> = req.body;
+
     await db.read();
-    const idx = db.data!.classes.findIndex((c: Class) => c.id === req.params.id);
-    if (idx === -1) {
+    const classIndex = db.data!.classes.findIndex((c: Class) => c.id === classId);
+
+    if (classIndex === -1) {
       res.status(404).json({ error: 'Class not found' });
       return;
     }
-    db.data!.classes[idx] = req.body;
+
+    // Update the existing class with new data, ensuring ID remains unchanged
+    db.data!.classes[classIndex] = {
+      ...db.data!.classes[classIndex],
+      ...updatedClassData,
+      id: classId, // Ensure ID remains unchanged
+    };
+
     await db.write();
-    res.json(db.data!.classes[idx]);
+    res.json(db.data!.classes[classIndex]);
   }
 );
 
 // DELETE /api/admin/classes/:id
-router.delete(
+adminRouter.delete(
   '/:id',
   requireAdminPassword,
   async (req: Request, res: Response): Promise<void> => {
@@ -77,4 +90,4 @@ router.delete(
   }
 );
 
-export default router;
+export { adminRouter, publicRouter };

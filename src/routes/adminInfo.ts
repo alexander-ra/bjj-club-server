@@ -2,36 +2,47 @@ import * as express from 'express';
 import db from '../db';
 import { requireAdminPassword } from './requireAdminPassword';
 
-const router = express.Router();
+const adminRouter = express.Router();
+const publicRouter = express.Router();
 
 // PUT /api/admin/info/sport
-router.put('/sport', requireAdminPassword, async (req, res) => {
-  const newInfo = req.body;
+adminRouter.put('/sport', requireAdminPassword, async (req, res) => {
+  console.log('PUT /api/admin/info/sport called'); // Added log
+  const updatedInfo: Partial<typeof db.data.sportInfo> = req.body;
   await db.read();
-  db.data!.sportInfo = newInfo;
+  // Update existing sportInfo with new data
+  db.data!.sportInfo = {
+    ...db.data!.sportInfo,
+    ...updatedInfo,
+  };
   await db.write();
-  res.status(200).json(newInfo);
+  res.status(200).json(db.data!.sportInfo);
 });
 
-// GET /api/admin/info/sport
-router.get('/sport', async (req, res) => {
+// GET /api/info/sport
+publicRouter.get('/sport', async (req, res) => {
   await db.read();
   res.json(db.data!.sportInfo);
 });
 
 // PUT /api/admin/info/teacher
-router.put('/teacher', requireAdminPassword, async (req, res) => {
-  const newInfo = req.body;
+adminRouter.put('/teacher', requireAdminPassword, async (req, res) => {
+  console.log('PUT /api/admin/info/teacher called'); // Added log
+  const updatedInfo: Partial<typeof db.data.teacherInfo> = req.body;
   await db.read();
-  db.data!.teacherInfo = newInfo;
+  // Update existing teacherInfo with new data
+  db.data!.teacherInfo = {
+    ...db.data!.teacherInfo,
+    ...updatedInfo,
+  };
   await db.write();
-  res.status(200).json(newInfo);
+  res.status(200).json(db.data!.teacherInfo);
 });
 
-// GET /api/admin/info/teacher
-router.get('/teacher', async (req, res) => {
+// GET /api/info/teacher
+publicRouter.get('/teacher', async (req, res) => {
   await db.read();
   res.json(db.data!.teacherInfo);
 });
 
-export default router;
+export { adminRouter, publicRouter };
