@@ -25,6 +25,12 @@ publicRouter.get('/sport', async (req, res) => {
   res.json(db.data!.sportInfo);
 });
 
+// GET /api/admin/info/test
+adminRouter.get('/test', requireAdminPassword, async (req, res) => {
+  console.log('GET /api/info/test'); // Added log
+  res.status(200).json({ ok: true });
+});
+
 // PUT /api/admin/info/teacher
 adminRouter.put('/teacher', requireAdminPassword, async (req, res) => {
   console.log('PUT /api/admin/info/teacher called'); // Added log
