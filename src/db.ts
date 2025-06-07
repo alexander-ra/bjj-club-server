@@ -7,6 +7,7 @@ import { Class } from './models/Class';
 import { GalleryImage } from './models/GalleryImage';
 import { Info } from './models/Info';
 import { ScheduleEvent } from './models/ScheduleEvent';
+import { TeacherInfo } from './models/TeacherInfo';
 
 export interface DatabaseSchema {
   classes: Class[];
@@ -14,7 +15,7 @@ export interface DatabaseSchema {
   info: Info[];
   schedule: ScheduleEvent[];
   sportInfo: Info;
-  teacherInfo: Info;
+  teacherInfo: TeacherInfo;
 }
 
 const adapter = new JSONFile<DatabaseSchema>('db.json');
@@ -36,8 +37,8 @@ export async function initDB() {
   }
   if (needsInit) {
     try {
-      const initialData = JSON.parse(fs.readFileSync(require.resolve('./bjj-initial-db.json'), 'utf-8'));
-      db.data = initialData;
+      const initialDataJson = fs.readFileSync(require.resolve('./bjj-initial-db.json'), 'utf-8');
+      db.data = JSON.parse(initialDataJson);
       await db.write();
       console.log('[DB] Initial data loaded into db.json.');
     } catch (initError) {
@@ -52,7 +53,7 @@ export async function initDB() {
     db.data.info ||= [];
     db.data.schedule ||= [];
     db.data.sportInfo ||= {} as Info;
-    db.data.teacherInfo ||= {} as Info;
+    db.data.teacherInfo ||= {} as TeacherInfo;
     await db.write();
     console.log('[DB] Existing data found, ensured all properties exist.');
   }

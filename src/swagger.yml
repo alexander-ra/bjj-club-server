@@ -63,6 +63,20 @@ components:
           items:
             type: string
 
+    TeacherInfoBlock:
+      allOf:
+        - $ref: '#/components/schemas/InfoBlock'
+        - type: object
+          properties:
+            address:
+              type: string
+            phone:
+              type: string
+            facebookUrl:
+              type: string
+            instagramUrl:
+              type: string
+
     GalleryImage:
       type: object
       properties:
@@ -138,7 +152,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InfoBlock'
+                $ref: '#/components/schemas/TeacherInfoBlock'
 
   /api/gallery:
     get:
@@ -258,7 +272,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InfoBlock'
+              $ref: '#/components/schemas/TeacherInfoBlock'
       responses:
         200:
           description: Updated

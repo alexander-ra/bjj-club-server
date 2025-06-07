@@ -96,7 +96,11 @@
     "images": [
       "https://scontent-sof1-2.xx.fbcdn.net/v/t39.30808-6/481351205_122097414044786912_406495635686777500_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=nvg61OxxwbIQ7kNvwEXlRz9&_nc_oc=AdnQdoXaFzi-iBtXJ42R7gZ_Rc9SdcPyGRcevxa5ZNIF89KGiAznsGBjzyAAxfQJYnA&_nc_zt=23&_nc_ht=scontent-sof1-2.xx&_nc_gid=IDl06wmAn19lyNdZvug2bA&oh=00_AfPOrjDRgP-_ti7MC3e0w-DZKdl5zUbyaMbpVzDFoXaRtg&oe=68499C41",
       "https://scontent-sof1-2.xx.fbcdn.net/v/t39.30808-6/481701992_122095747286786912_5267067244784945443_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=G1a9C3vOEyEQ7kNvwHLoMKo&_nc_oc=AdkNpRtbIkHGgnA435ZqVksiAza9-D_sut7KcDCrLWRpTpD2wsbzO9gwkeiPFlaWLwM&_nc_zt=23&_nc_ht=scontent-sof1-2.xx&_nc_gid=wYzeBrwVrbsfdVSDocvqvQ&oh=00_AfPakabAhzgeWpSuq0ndqDyxFqvKVRzONtfgUiantosL7Q&oe=6849C6E8"
-    ]
+    ],
+    "address": "Your Club Address, City",
+    "phone": "+1234567890",
+    "facebookUrl": "https://facebook.com/yourclub",
+    "instagramUrl": "https://instagram.com/yourclub"
   },
   "gallery": [
     {
@@ -114,3 +118,4 @@
   ],
   "info": []
 }
+
