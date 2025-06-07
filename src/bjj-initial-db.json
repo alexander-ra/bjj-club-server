@@ -2,43 +2,43 @@
   "classes": [
     {
       "id": "dbca59f0-e568-4b25-ab6b-bfc6dcf1f303",
-      "title": "Beginner",
+      "title": "Начинаещ",
       "icon": "FaUserGraduate",
       "images": [
         "https://picsum.photos/seed/beginner0/800/600",
         "https://picsum.photos/seed/beginner1/800/600"
       ],
-      "description": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training."
+      "description": "Класът за начинаещи е идеалният старт за всеки, който иска да се запознае с основите на бразилското джу-джицу. В спокойна и подкрепяща среда ще научите ключови техники, правилна стойка и основни защити. Подходящ е за хора без предишен опит или с минимални познания."
     },
     {
       "id": "f008a1f8-2e99-4cb6-91d1-f6eb7fdc99fe",
-      "title": "Professional",
+      "title": "Про",
       "icon": "FaMedal",
       "images": [
         "https://picsum.photos/seed/professional0/800/600",
         "https://picsum.photos/seed/professional1/800/600"
       ],
-      "description": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training."
+      "description": "Професионалният клас е предназначен за напреднали практикуващи и състезатели, които искат да изострят техниката си и да развият стратегическо мислене. Тренировките включват интензивни спаринги, техническа дълбочина и подготовка за турнири."
     },
     {
       "id": "2d8861b3-368e-460a-b9d4-6156d13c3911",
-      "title": "Senior",
-      "icon": "FaPersonCane",
+      "title": "Хоби",
+      "icon": "FaPersonRunning",
       "images": [
         "https://picsum.photos/seed/senior0/800/600",
         "https://picsum.photos/seed/senior1/800/600"
       ],
-      "description": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training."
+      "description": "Този клас е предназначен за по-възрастни или по-умерено активни участници, които търсят по-леко физическо натоварване. Фокусът е върху техническото изпълнение, самозащита и плавното развитие на умения в спокойна и приятелска атмосфера. Подходящ е за хора, които искат да тренират с удоволствие и без напрежение."
     },
     {
       "id": "d0a9889c-6aa3-48b9-bdc2-0c6df03c869d",
       "title": "Open Mat",
-      "icon": "FaPersonRunning",
+      "icon": "FaUserNinja",
       "images": [
         "https://picsum.photos/seed/openmat0/800/600",
         "https://picsum.photos/seed/openmat1/800/600"
       ],
-      "description": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training."
+      "description": "Open Mat е свободна тренировка, отворена за всички нива. Това е възможност за практикуване на наученото, за спаринг с партньори и за обмяна на знания в неформална среда. Без структура и инструкции — само чисто джу-джицу и свободна практика."
     }
   ],
   "schedule": [
@@ -52,37 +52,50 @@
     {
       "id": "aa792fd9-6892-4f7a-aaa1-178c481abb68",
       "classId": "f008a1f8-2e99-4cb6-91d1-f6eb7fdc99fe",
-      "dayOfWeek": 2,
+      "dayOfWeek": 1,
       "startTime": "18:00",
       "durationMinutes": 75
     },
     {
       "id": "9633d969-7513-47f0-a75c-07fea1945917",
       "classId": "2d8861b3-368e-460a-b9d4-6156d13c3911",
-      "dayOfWeek": 3,
-      "startTime": "19:00",
+      "dayOfWeek": 2,
+      "startTime": "16:30",
       "durationMinutes": 90
     },
     {
       "id": "3f658edd-3f69-4f97-a35c-5847d313080c",
       "classId": "d0a9889c-6aa3-48b9-bdc2-0c6df03c869d",
-      "dayOfWeek": 4,
-      "startTime": "20:00",
-      "durationMinutes": 105
+      "dayOfWeek": 0,
+      "startTime": "16:00",
+      "durationMinutes": 120
+    },
+    {
+      "dayOfWeek": 6,
+      "startTime": "10:00",
+      "durationMinutes": 60,
+      "classId": "d0a9889c-6aa3-48b9-bdc2-0c6df03c869d"
+    },
+    {
+      "dayOfWeek": 2,
+      "startTime": "18:00",
+      "durationMinutes": 90,
+      "classId": "f008a1f8-2e99-4cb6-91d1-f6eb7fdc99fe"
     }
   ],
   "sportInfo": {
-    "text": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training. Our club welcomes all levels of experience. Whether you're a complete beginner or a seasoned competitor, we offer structured classes tailored to your journey. Join us and experience the confidence, fitness, and camaraderie that BJJ brings into your life.",
+    "text": "Бразилското джу-джицу (BJJ) е динамично бойно изкуство, фокусирано върху граплинг и борба на земя, което развива умения чрез техника, лостове и стратегия. Подходящо за всички нива, BJJ изгражда физическа издръжливост, умствена дисциплина и увереност — независимо дали тренирате за състезания, самозащита или лично развитие. Присъединете се към нашата приветлива общност и открийте преобразяващата сила на това „нежно изкуство“.",
     "images": [
-      "https://picsum.photos/seed/sport0/800/600",
-      "https://picsum.photos/seed/sport1/800/600"
+      "https://www.nagafighter.com/wp-content/uploads/578A5856-2-scaled.jpg",
+      "https://okbjj.com/wp-content/uploads/2024/03/PHOTO-2024-02-12-18-31-56-10-1800x1000.jpg",
+      "https://graciebarrasandiego.com/wp-content/uploads/2024/10/Adults-Jiu-Jitsu-No-Gi-1024x682-1.webp"
     ]
   },
   "teacherInfo": {
-    "text": "Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport based on ground fighting and submission holds. It focuses on the skill of controlling one's opponent through techniques that force them to submit. BJJ promotes the concept that a smaller, weaker person can successfully defend against a bigger, stronger assailant by using leverage and proper technique. This makes it ideal for self-defense and fitness. The practice of BJJ provides both physical and mental benefits. It builds endurance, strength, and discipline. Many practitioners find a strong sense of community and personal growth through regular training. Our club welcomes all levels of experience. Whether you're a complete beginner or a seasoned competitor, we offer structured classes tailored to your journey. Join us and experience the confidence, fitness, and camaraderie that BJJ brings into your life.",
+    "text": "Казвам се Пламен Колев и се занимавам с бойни изкуства повече от 10 години. През това време съм преминал през различни стилове и състезания, като джу-джицу се превърна в моята най-голяма страст. Имал съм възможността да тренирам както в България, така и в Испания, което ми помогна да изградя по-широк поглед и по-балансиран подход към тренировките. За мен е важно не просто да показвам техники, а да помагам на всеки да ги разбира и прилага уверено – независимо дали тепърва започва или вече има опит. Вярвам, че тренировките трябва да бъдат едновременно полезни, разбираеми и забавни. Радвам се, когато виждам хората да се развиват, да се мотивират взаимно и да изграждат увереност както на тепиха, така и извън него.",
     "images": [
-      "https://picsum.photos/seed/teacher0/800/600",
-      "https://picsum.photos/seed/teacher1/800/600"
+      "https://scontent-sof1-2.xx.fbcdn.net/v/t39.30808-6/481351205_122097414044786912_406495635686777500_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=nvg61OxxwbIQ7kNvwEXlRz9&_nc_oc=AdnQdoXaFzi-iBtXJ42R7gZ_Rc9SdcPyGRcevxa5ZNIF89KGiAznsGBjzyAAxfQJYnA&_nc_zt=23&_nc_ht=scontent-sof1-2.xx&_nc_gid=IDl06wmAn19lyNdZvug2bA&oh=00_AfPOrjDRgP-_ti7MC3e0w-DZKdl5zUbyaMbpVzDFoXaRtg&oe=68499C41",
+      "https://scontent-sof1-2.xx.fbcdn.net/v/t39.30808-6/481701992_122095747286786912_5267067244784945443_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=G1a9C3vOEyEQ7kNvwHLoMKo&_nc_oc=AdkNpRtbIkHGgnA435ZqVksiAza9-D_sut7KcDCrLWRpTpD2wsbzO9gwkeiPFlaWLwM&_nc_zt=23&_nc_ht=scontent-sof1-2.xx&_nc_gid=wYzeBrwVrbsfdVSDocvqvQ&oh=00_AfPakabAhzgeWpSuq0ndqDyxFqvKVRzONtfgUiantosL7Q&oe=6849C6E8"
     ]
   },
   "gallery": [
@@ -98,5 +111,6 @@
       "url": "https://picsum.photos/seed/gallery2/800/600",
       "caption": "Gallery Image 3"
     }
-  ]
+  ],
+  "info": []
 }
