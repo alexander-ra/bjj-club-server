@@ -4,5 +4,5 @@ export interface Class {
   icon: string;
   images: string[];
   description: string;
+  color: string; // Added color property
 }
-

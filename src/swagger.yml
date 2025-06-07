@@ -17,7 +17,7 @@ components:
   schemas:
     Class:
       type: object
-      required: [title, description, icon]
+      required: [title, description, icon, color] # Added color to required
       properties:
         id:
           type: string
@@ -31,6 +31,10 @@ components:
             type: string
         description:
           type: string
+        color: # Added color property
+          type: string
+          pattern: "^#[0-9a-fA-F]{6}$"
+          example: "#FF00FF"
 
     ScheduleEvent:
       type: object
@@ -76,10 +80,6 @@ components:
               type: string
             instagramUrl:
               type: string
-
-    GalleryImage:
-      type: object
-      properties:
         url:
           type: string
         caption:
